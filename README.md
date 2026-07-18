@@ -2,6 +2,8 @@
 
 *The Necklace* is an interactive Three.js story about Jalen Creed, a sailor who discovers the Weaver: a necklace that can reveal the memories held by objects, places, and the world around them.
 
+**[Watch the public experience](https://jaronkbragg7337.github.io/the-necklace-show/)** — no installation or account required.
+
 This repository contains a fifteen-chapter cinematic web experience built with Three.js. It is being developed in public so people can experience the story, learn from the implementation, improve it, and imagine entirely different uses for its central power.
 
 ## The superpower at the heart of it
