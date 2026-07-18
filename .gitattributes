@@ -1,0 +1,3 @@
+*.zip binary
+lib/three.module.js linguist-vendored=true
+canonical-archive/** linguist-vendored=true
