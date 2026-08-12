@@ -1,6 +1,31 @@
 # Asset and narration handoff
 
-The experience works entirely with original procedural geometry today. To move it to a finished production look, replace the character and hero-prop builders with original or properly licensed `.glb` files. Keep one model sheet per recurring character so Jalen, Maya, Leo, Thorne, and Naia retain the same silhouette, palette, hair, and costume language in every chapter.
+The experience uses original procedural geometry, now organized as constructed
+assemblies instead of single primitive stand-ins. Shared builders provide the
+current metrically scaled Sea Serpent, Seeker craft, Weaver lockbox, cast,
+terrain, port architecture, and Seeker machinery. Future original or properly
+licensed `.glb` assets can replace a builder without changing chapter logic.
+
+Keep one model sheet per recurring character so Jalen, Maya, Leo, Thorne, and
+Naia retain the same silhouette, palette, hair, and costume language in every
+chapter. Match the current one-unit-equals-one-metre convention and preserve
+the named attachment points in `userData` for animated crystals, hinges, rings,
+and other story-critical components.
+
+## Surface standard
+
+- Use color, OpenGL normal, and packed ARM (AO / roughness / metalness) maps.
+- Record source URL, artist, license, download date, physical dimensions, and
+  checksum before adding a file.
+- Prefer 1K for recurring web materials; reserve 2K for a hero asset proven to
+  need it in a close shot.
+- Keep a consistent physical repeat scale and introduce macro variation so
+  repeated surfaces do not reveal a visible tile grid.
+- Bundle cleared assets locally. The public show must not depend on a third-party
+  texture API at runtime.
+
+The current CC0 texture manifest and human-readable provenance are in
+[`assets/textures/`](./assets/textures/PROVENANCE.md).
 
 ## Recorded narration and dialogue
 
