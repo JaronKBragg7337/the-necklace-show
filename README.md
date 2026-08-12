@@ -70,10 +70,36 @@ This repository keeps that process visible so other people can study it, improve
 ## Current experience
 
 - Fifteen cinematic chapters
-- Procedural 3D environments and recurring character designs
+- Metrically scaled procedural environments and recurring character designs
+- Constructed hero assets with separate hull, deck, rail, rigging, fastener,
+  hinge, panel, clothing, and hardware layers
+- Locally bundled CC0 PBR surfaces with normal, ambient-occlusion, roughness,
+  and metalness response
 - Chapter navigation, captions, ambient sound, and optional recorded narration support
 - Distinct visual languages for memories, Seeker technology, and the Heart of the Tides
 - No account or external service required
+
+## Production-fidelity system
+
+One Three.js unit represents one metre. The Sea Serpent is proportioned as a
+thirty-foot sloop, characters use human-scale heights, and material repeats are
+derived from the real-world dimensions published with each texture set. Shared
+builders keep recurring assets consistent across chapters while still exposing
+individual construction layers for close shots.
+
+The PBR source files are bundled at 1K for a practical web-film memory budget.
+World-space macro variation breaks up obvious repetition, and packed ARM maps
+provide per-pixel ambient occlusion, roughness, and metal response. Lower-memory
+phones automatically use a reduced pixel ratio while retaining the same scene
+geometry and story content.
+
+See [texture provenance](./assets/textures/PROVENANCE.md) for source pages,
+artists, physical scale, CC0 status, and checksums.
+
+See the [production bible](./PRODUCTION_BIBLE.md) for the screen language that
+connects Jalen's voyage to Maya's archaeological future, Leo's investigative
+future, and the Seeker/Keeper technology without turning the Weaver into a
+generic magic effect.
 
 ## Run locally
 
@@ -85,4 +111,5 @@ The intent is for this project to be genuinely reusable, not merely visible. Bef
 
 Until those license files are added, the repository's public availability alone does not grant reuse rights. This note is here to keep the legal status honest while the final licensing structure is chosen.
 
-See [ASSET_PIPELINE.md](./ASSET_PIPELINE.md) for the planned character, environment, prop, and recorded-audio workflow.
+See [ASSET_PIPELINE.md](./ASSET_PIPELINE.md) for the character, environment,
+prop, texture, and recorded-audio workflow.

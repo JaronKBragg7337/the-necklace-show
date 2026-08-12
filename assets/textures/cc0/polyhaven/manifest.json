@@ -1,0 +1,82 @@
+{
+  "downloaded": "2026-08-12",
+  "provider": "Poly Haven",
+  "provider_url": "https://polyhaven.com/",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "runtime_api_dependency": false,
+  "resolution": "1k",
+  "format": "jpg",
+  "sets": {
+    "wooden_planks": {
+      "page": "https://polyhaven.com/a/wooden_planks",
+      "authors": ["Charlotte Baglioni", "Dario Barresi"],
+      "physical_width_m": 2.0,
+      "files": {
+        "wooden_planks_diff_1k.jpg": "045a70f787fcb4b60ee5c9878a9bd674",
+        "wooden_planks_nor_gl_1k.jpg": "03206d820a026239db91a1ff3d8c589d",
+        "wooden_planks_arm_1k.jpg": "f11bed43f21564cf9468e2e27dda22c5"
+      }
+    },
+    "rusty_metal_04": {
+      "page": "https://polyhaven.com/a/rusty_metal_04",
+      "authors": ["Amal Kumar"],
+      "physical_width_m": 2.0,
+      "files": {
+        "rusty_metal_04_diff_1k.jpg": "91832efd8e5896387e2af18a5b49b895",
+        "rusty_metal_04_nor_gl_1k.jpg": "25f7f28b3546391532a5567b86e65aeb",
+        "rusty_metal_04_arm_1k.jpg": "279a6d62861e32e4ee43cce84b932e43"
+      }
+    },
+    "rock_06": {
+      "page": "https://polyhaven.com/a/rock_06",
+      "authors": ["Rob Tuytel"],
+      "physical_width_m": 1.5,
+      "files": {
+        "rock_06_diff_1k.jpg": "72a5bd7c0d441c750bf9b7c97e764e33",
+        "rock_06_nor_gl_1k.jpg": "ff69cca602dd3a3661e9f17cc085e70f",
+        "rock_06_arm_1k.jpg": "1097b883d27159713e00ddc75ad0ba13"
+      }
+    },
+    "sand_01": {
+      "page": "https://polyhaven.com/a/sand_01",
+      "authors": ["Rob Tuytel"],
+      "physical_width_m": 1.5,
+      "files": {
+        "sand_01_diff_1k.jpg": "c914c8edb419f040e04224081a3f79a5",
+        "sand_01_nor_gl_1k.jpg": "369b82aa417c77ec85c4c07c4c7b60a0",
+        "sand_01_arm_1k.jpg": "3ab2b7731c0430662bdc4d12425411a3"
+      }
+    },
+    "brown_leather": {
+      "page": "https://polyhaven.com/a/brown_leather",
+      "authors": ["Rob Tuytel"],
+      "physical_width_m": 0.4,
+      "files": {
+        "brown_leather_albedo_1k.jpg": "080b3bf1372766ff2c7ff121ed07b5e8",
+        "brown_leather_nor_gl_1k.jpg": "b63ae0121a415c23d74eed0b07fc6065",
+        "brown_leather_arm_1k.jpg": "40778465932d0a0816a9fbdab00e2a5d"
+      }
+    },
+    "plastered_wall_05": {
+      "page": "https://polyhaven.com/a/plastered_wall_05",
+      "authors": ["Charlotte Baglioni"],
+      "physical_width_m": 2.0,
+      "files": {
+        "plastered_wall_05_diff_1k.jpg": "b3802ea845531b87adaa61ae23a0ed27",
+        "plastered_wall_05_nor_gl_1k.jpg": "0aa2e198b82e3b0d5705f39a510f1041",
+        "plastered_wall_05_arm_1k.jpg": "349a4744ea13e909f46e20b00b70ffbd"
+      }
+    },
+    "stone_tiles_02": {
+      "page": "https://polyhaven.com/a/stone_tiles_02",
+      "authors": ["Charlotte Baglioni"],
+      "physical_width_m": 2.0,
+      "files": {
+        "stone_tiles_02_diff_1k.jpg": "8d2ebfc3505efbb610aa5010d38d2df8",
+        "stone_tiles_02_nor_gl_1k.jpg": "cca5bd87964b755cc85c01322e8d1a0e",
+        "stone_tiles_02_arm_1k.jpg": "b7d6c503145f4b57cd6e4442739036f8"
+      }
+    }
+  }
+}
