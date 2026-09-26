@@ -2183,6 +2183,7 @@ const fadeEl=$('fade'), flashEl=$('flash'), whiteEl=$('whitefade'),
   capEl=$('caption'), progfill=$('progfill'), labelEl=$('scene-label'),
   controls=$('controls'), dotsEl=$('dots'), startEl=$('start'), endEl=$('endcard'),
   memoryLanguage=$('memory-language'), narrationEl=$('narration');
+const TV_MODE = new URLSearchParams(location.search).get('tv') === '1';
 const beginButton=$('btn-begin'), loadMeter=$('asset-load-fill'), loadNote=$('load-note');
 beginButton.disabled=true;
 const productionReady=preloadProductionAssets(progress=>{
@@ -2264,6 +2265,10 @@ function setPlaying(p){
 }
 
 function endShow(){
+  if(TV_MODE){   // on Heartbeat TV: tell the channel we finished so it moves on; alone, start over after a beat
+    try{ parent !== window && parent.postMessage({type:'hbtv-ended', show:'the-necklace-show'}, '*'); }catch(e){}
+    setTimeout(()=>{ if(!playing){ loadScene(0, true).then(()=>setPlaying(true)); } }, 6000);
+  }
   setPlaying(false);
   endEl.classList.remove('gone');
   endEl.classList.add('on');
@@ -2412,4 +2417,23 @@ $('btn-replay').onclick = async ()=>{
     fadeEl.style.opacity = 1;
   }
 })();
+/* Heartbeat TV mode (?tv=1): no Begin screen, starts itself when loaded, fits a small 16:9 screen, one tap for sound.
+   Added 2026-09-26 - on a phone the TV box is ~360px wide and the Begin button sat off-screen. */
+if(TV_MODE){
+  document.body.classList.add('tv');
+  startEl.classList.add('gone');
+  document.body.classList.add('playing');
+  const snd = document.createElement('button'); snd.id='tv-sound'; snd.textContent='🔊 Tap for sound'; document.body.appendChild(snd);
+  const unmute = async ()=>{
+    AudioSys.init(); try{ await AudioSys.ctx.resume(); }catch(e){}
+    if(AudioSys.muted){ AudioSys.toggleMute(); } Narration.muted(false); narrationEl.play().catch(()=>{});
+    snd.remove(); removeEventListener('pointerdown', unmute);
+  };
+  snd.onclick = unmute; addEventListener('pointerdown', unmute);
+  productionReady.then(async ()=>{
+    AudioSys.init(); await Narration.init(); Narration.muted(true);
+    await loadScene(0, false); fadeEl.style.opacity = 0; setPlaying(true);
+    if(AudioSys.ctx && AudioSys.ctx.state === 'running') snd.remove();
+  });
+}
 window.__show = { goto:i=>loadScene(i), index:()=>idx };

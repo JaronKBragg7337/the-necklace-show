@@ -102,6 +102,14 @@
     box-shadow:0 0 22px 5px rgba(63,125,255,.75);animation:pulse 2.4s ease-in-out infinite}
   @keyframes pulse{0%,100%{box-shadow:0 0 14px 3px rgba(63,125,255,.5)}50%{box-shadow:0 0 30px 9px rgba(63,125,255,.95)}}
   #endcard{display:none}
+  /* Heartbeat TV mode: small 16:9 screen, no controls, compact captions */
+  body.tv #controls, body.tv #endcard{display:none!important}
+  body.tv .bar{height:5vh}
+  body.tv #caption{bottom:7vh;width:92vw;font-size:clamp(10px,3.1vw,19px);line-height:1.4}
+  body.tv #tc-title{font-size:clamp(18px,6vw,56px)}
+  body.tv #tc-ch{font-size:clamp(8px,1.8vw,14px)}
+  #tv-sound{position:fixed;right:10px;top:10px;z-index:80;font:600 clamp(10px,2.6vw,14px)/1 system-ui,sans-serif;color:#fff;
+    background:rgba(0,0,0,.62);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:7px 11px;cursor:pointer}
   #endcard.on{display:flex}
 </style>
 <script type="importmap">{ "imports": { "three": "./lib/three.module.js" } }</script>
