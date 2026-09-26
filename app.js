@@ -2430,7 +2430,10 @@ if(TV_MODE){
     snd.remove(); removeEventListener('pointerdown', unmute);
   };
   snd.onclick = unmute; addEventListener('pointerdown', unmute);
+  const ld = document.createElement('div'); ld.id='tv-loading'; ld.textContent='The Necklace · loading…'; document.body.appendChild(ld);
+  const tick = setInterval(()=>{ const w = loadMeter && loadMeter.style.width; if(w) ld.textContent = 'The Necklace · loading ' + w; }, 300);
   productionReady.then(async ()=>{
+    clearInterval(tick); ld.remove();
     AudioSys.init(); await Narration.init(); Narration.muted(true);
     await loadScene(0, false); fadeEl.style.opacity = 0; setPlaying(true);
     if(AudioSys.ctx && AudioSys.ctx.state === 'running') snd.remove();
